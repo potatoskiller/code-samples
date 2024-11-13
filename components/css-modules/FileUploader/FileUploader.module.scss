@@ -1,0 +1,9 @@
+.container {
+  width: 100%;
+  max-width: 200px;
+  transition: filter 0.3s ease-out;
+
+  input {
+    display: none;
+  }
+}
