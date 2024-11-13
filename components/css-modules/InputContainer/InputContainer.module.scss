@@ -1,0 +1,137 @@
+.container {
+  @include flex-container(flex, column);
+  width: 100%;
+
+  label {
+    @include flex-container(flex, row, center);
+    margin-bottom: 5px;
+    color: $blue500;
+    font-size: 14px;
+    gap: 8px;
+
+    .subLabel {
+      margin-left: 5px;
+      color: $blue300;
+    }
+
+    svg {
+      max-width: 20px;
+      max-height: 20px;
+      margin-right: 5px;
+
+      path {
+        fill: $blue300;
+      }
+    }
+
+    .infoIcon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .fieldContainer {
+    @include flex-container(flex, row, center);
+
+    position: relative;
+    width: 100%;
+  }
+
+  .iconRight,
+  .iconLeft {
+    position: absolute;
+    display: flex;
+
+    svg {
+      max-width: 16px;
+      max-height: 16px;
+    }
+
+    &:hover {
+      @include button-hover;
+    }
+  }
+
+  .iconLeft {
+    left: 12px;
+  }
+
+  .iconRight {
+    right: 12px;
+  }
+
+  .hintLabel {
+    margin-top: 4px;
+    color: $blue300;
+    font-style: italic;
+  }
+
+  .errorMessage {
+    margin-top: 5px;
+    color: $red100;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  input,
+  textarea {
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid $gray100;
+    width: 100%;
+    resize: none;
+    @include element-transition;
+
+    &:focus {
+      border: 1px solid $blue300;
+    }
+  }
+
+  .errorState {
+    input,
+    textarea {
+      border: 1px solid $red100;
+    }
+  }
+
+  .successState {
+    input,
+    textarea {
+      border: 1px solid $green100;
+    }
+  }
+
+  .smallSize {
+    input,
+    textarea {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  }
+
+  .mediumSize {
+    input,
+    textarea {
+      font-size: 16px;
+      padding: 9px 12px;
+    }
+  }
+
+  .leftSpace {
+    input,
+    textarea {
+      padding-left: 34px;
+    }
+  }
+
+  .rightSpace {
+    input,
+    textarea {
+      padding-right: 34px;
+    }
+  }
+
+  ::placeholder {
+    color: rgba($blue500, 0.5);
+  }
+}
